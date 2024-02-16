@@ -1,0 +1,22 @@
+{% extends 'AppShop/padre.html' %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>Bienvenido!!!.... Gestión de ventas.<h1>
+    <h2>Hoy es: {{hoy}}</h2>
+
+
+    {% if vendedores %}
+    <p>Resultados para: {{sucursal}}</p>
+    <ul>
+    {% for vendedor in vendedores %}
+    <li>{{vendedor.nombre}} {{vendedor.apellido}} - email: {{vendedor.email}} - Suc.:{{vendedor.sucursal}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>Para buscar vendedores por sucursal ingresar el url:</p>
+    <p>/AppShop/buscar?sucursal=nro</p>
+    {% endif %}
+    
+{% endblock contenidoQueCambia %}

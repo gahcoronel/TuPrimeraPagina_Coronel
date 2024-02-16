@@ -1,0 +1,22 @@
+{% extends 'AppShop/padre.html' %}
+
+
+
+
+{% block contenidoQueCambia %}
+
+<h1>Formulario - Agregar Cliente</h1>
+
+{% if miFormulario.errors %}
+<p style="color: red">Datos incorrectos! Revisar por favor.</p>
+{% endif %}
+<form action="" method="post">
+{% csrf_token %}
+<!-- Aca esta la magia de Django-->
+<table>
+    {{miFormulario.as_table}}
+</table>
+<input type="submit" value="Enviar">
+</form>
+
+{% endblock contenidoQueCambia %}
